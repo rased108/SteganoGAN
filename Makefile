@@ -86,8 +86,8 @@ serve-docs: view-docs ## compile the docs watching for changes
 
 .PHONY: dist
 dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
+	python3 setup.py sdist
+	python3 setup.py bdist_wheel
 	ls -l dist
 
 .PHONY: test-publish
@@ -121,7 +121,7 @@ bumpversion-major: ## Bump the version the next major skipping the release
 	bumpversion --no-tag major
 
 CURRENT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
-CHANGELOG_LINES := $(shell git diff HEAD..stable HISTORY.md | wc -l)
+CHANGELOG_LINES := $(shell git diff HEAD..stable HISTORY.md | find /c /v "")
 
 .PHONY: check-release
 check-release: ## Check if the release can be made
