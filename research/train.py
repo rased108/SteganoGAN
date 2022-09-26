@@ -15,7 +15,7 @@ from steganogan.loader import DataLoader
 
 def main():
     torch.manual_seed(42)
-    timestamp = int(time())
+    timestamp = str(int(time()))
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--epochs', default=4, type=int)
