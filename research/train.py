@@ -26,8 +26,8 @@ def main():
     parser.add_argument('--output', default=False, type=str)
     args = parser.parse_args()
 
-    train = DataLoader(os.path.join("data", args.dataset, "train"), shuffle=True)
-    validation = DataLoader(os.path.join("data", args.dataset, "val"), shuffle=False)
+    train = DataLoader(os.path.join("data", args.dataset, "train"), shuffle=True, batch_size=2)
+    validation = DataLoader(os.path.join("data", args.dataset, "val"), shuffle=False, batch_size=2)
 
     encoder = {
         "basic": BasicEncoder,
