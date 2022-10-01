@@ -31,7 +31,8 @@ class BasicCritic(nn.Module):
             nn.BatchNorm2d(self.hidden_size),
 
             self._conv2d(self.hidden_size, self.hidden_size),
-            nn.LeakyReLU(inplace=True),
+            #nn.LeakyReLU(inplace=True),
+            nn.Sigmoid(),
             nn.BatchNorm2d(self.hidden_size),
 
             self._conv2d(self.hidden_size, 1)

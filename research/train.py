@@ -19,7 +19,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--epochs', default=4, type=int)
-    parser.add_argument('--encoder', default="basic", type=str)
+    parser.add_argument('--encoder', default="dense", type=str)
     parser.add_argument('--data_depth', default=1, type=int)
     parser.add_argument('--hidden_size', default=32, type=int)
     parser.add_argument('--dataset', default="div2k", type=str)

@@ -10,7 +10,7 @@ from multiprocessing import Pool, freeze_support, cpu_count
 
 warnings.filterwarnings("ignore")
 
-input_path = 'research\\data\\mscoco\\val\\_'
+input_path = 'research\\data\\div2k\\val\\_'
 output_path = 'research\\StegImages'
 files = [f for f in listdir(input_path) if isfile(join(input_path, f))]
 
@@ -29,6 +29,6 @@ if __name__ == '__main__':
     freeze_support()
     #cpu_cores = int(cpu_count() * 0.25)
     cpu_cores=2
-    print('No of CPU cores: ' + str(cpu_count))
+    print('No of CPU cores: ' + str(cpu_cores) + ' of ' + str(cpu_count()))
     pool = Pool(cpu_cores)
     pool.map(process, files)
