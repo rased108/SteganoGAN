@@ -7,7 +7,7 @@ import warnings
 from os.path import isfile, join
 from steganogan import SteganoGAN
 from multiprocessing import Pool, freeze_support, cpu_count
-from progress.bar import Bar
+from progress.bar import IncrementalBar
 
 warnings.filterwarnings("ignore")
 
@@ -15,7 +15,7 @@ input_path = 'research\\data\\div2k\\val\\_'
 output_path = 'research\\StegImages'
 files = [f for f in listdir(input_path) if isfile(join(input_path, f))]
 
-bar = Bar('Processing', max=len(files))
+bar = IncrementalBar('Processing', max=len(files))
 
 steganogan = SteganoGAN.load(architecture='dense', cuda=False)
 # steganogan = SteganoGAN.load(path='research/models/1664212615/weights.steg', cuda=False)
