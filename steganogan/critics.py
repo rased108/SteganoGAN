@@ -23,15 +23,19 @@ class BasicCritic(nn.Module):
     def _build_models(self):
         return nn.Sequential(
             self._conv2d(3, self.hidden_size),
-            nn.LeakyReLU(inplace=True),
+            nn.PReLU(),
             nn.BatchNorm2d(self.hidden_size),
 
             self._conv2d(self.hidden_size, self.hidden_size),
-            nn.LeakyReLU(inplace=True),
+            nn.PReLU(),
             nn.BatchNorm2d(self.hidden_size),
 
             self._conv2d(self.hidden_size, self.hidden_size),
-            nn.LeakyReLU(inplace=True),
+            nn.PReLU(),
+            nn.BatchNorm2d(self.hidden_size),
+
+            self._conv2d(self.hidden_size, self.hidden_size),
+            nn.PReLU(),
             nn.BatchNorm2d(self.hidden_size),
 
             self._conv2d(self.hidden_size, 1)

@@ -18,7 +18,7 @@ def main():
     timestamp = str(int(time()))
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', default=4, type=int)
+    parser.add_argument('--epochs', default=25, type=int)
     parser.add_argument('--encoder', default="dense", type=str)
     parser.add_argument('--data_depth', default=1, type=int)
     parser.add_argument('--hidden_size', default=32, type=int)
